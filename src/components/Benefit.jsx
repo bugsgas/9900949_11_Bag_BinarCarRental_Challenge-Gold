@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
-import { Container, Row, Col } from "react-bootstrap";
+import { Image, Container, Row, Col } from "react-bootstrap";
 
 const Benefit = ({ description, list }) => {
   const img = [];
@@ -12,12 +12,12 @@ const Benefit = ({ description, list }) => {
           <h1>{description.title}</h1>
           <p>{description.subtitle}</p>
         </div>
-        <Row>
+        <Row className="justify-content-evenly">
           {list.map((item) => (
-            <Col className="justify-content-center">
+            <Col sm={3}>
               <Card className="card-pad" style={{ width: "300px" }}>
                 <Card.Body>
-                  <img className="icon-pad" src={item.icon}></img>
+                  <Image fluid className="icon-pad" src={item.icon}></Image>
                   <Card.Title>{item.title}</Card.Title>
                   <Card.Text>{item.desc}</Card.Text>
                 </Card.Body>

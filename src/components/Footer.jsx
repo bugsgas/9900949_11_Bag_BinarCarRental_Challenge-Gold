@@ -1,37 +1,37 @@
 import React from "react";
-import { Row, Col, Container } from "react-bootstrap";
+import { Image, Row, Col, Container } from "react-bootstrap";
 
 const Footer = ({ contactUs, menu, social }) => {
   return (
     <div className="footer">
       <Container className="">
         <Row className="">
-          <Col sm className="d-flex justify-content-center">
+          <Col sm={3} className="">
             <div className="contact-us">
               <p>{contactUs.address}</p>
               <p>{contactUs.email}</p>
               <p>{contactUs.phone}</p>
             </div>
           </Col>
-          <Col sm className="d-flex justify-content-center">
+          <Col sm={3} className="">
             <div className="footer-list">
               {menu.map((item) => (
                 <p>{item}</p>
               ))}
             </div>
           </Col>
-          <Col sm className="d-flex justify-content-center">
+          <Col sm={3} className="">
             <div>
               <h6>Connect with us</h6>
               {social.map((item) => (
-                <img className="social-icon" src={item}></img>
+                <Image fluid className="social-icon" src={item}></Image>
               ))}
             </div>
           </Col>
-          <Col sm className="d-flex justify-content-center">
-            <div>
+          <Col sm={3} className="">
+            <div className="">
               <h6>Copyright Binar</h6>
-              <img src="src/assets/Rectangle 74.png"></img>
+              <Image fluid src="src/assets/Rectangle 74.png"></Image>
             </div>
           </Col>
         </Row>

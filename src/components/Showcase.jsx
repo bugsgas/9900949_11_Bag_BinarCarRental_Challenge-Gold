@@ -1,6 +1,7 @@
 import React from "react";
 import { Row, Col, Container } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
+import Image from "react-bootstrap/Image";
 
 const Showcase = ({ description }) => {
   return (
@@ -13,7 +14,7 @@ const Showcase = ({ description }) => {
             <Button variant="success">Mulai Sewa Mobil</Button>{" "}
           </Col>
           <Col sm fluid>
-            <img src="src/assets/img_car.png" />
+            <Image src="src/assets/img_car.png" fluid />
           </Col>
         </Row>
       </Container>
