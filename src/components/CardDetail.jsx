@@ -6,73 +6,56 @@ import { Card, Button, Row, Col, Container } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
-const CarCard = ({}) => {
-  const [data, setData] = useState([]);
-  const [name, setName] = useState("");
-  const [category, setCategory] = useState("");
-  const navigate = useNavigate();
+export default function CardDetail(include, exclude, info) {
+  const [data, setData] = useState({});
+  const { id } = useParams();
 
-  const goSearch = (id) => {
-    navigate(`/detail/${id}`);
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
-
-  const getData = () => {
-    const api = `https://bootcamp-rent-cars.herokuapp.com/customer/v2/car?name=${name}&category=${category}`;
-
+  const getDetailedData = () => {
+    const api = `https://bootcamp-rent-cars.herokuapp.com/customer/car/${id}`;
     axios
       .get(api)
       .then((res) => {
-        setData(res.data.cars);
+        console.log(res);
+        setData(res.data);
       })
       .catch((err) => console.log(err));
   };
 
-  const handleChange = (e) => {
-    setName(e.target.value);
-  };
+  // using useEffect so it can be rendered when the page is loaded
+  useEffect(() => {
+    getDetailedData();
+  }, []);
 
   return (
     <>
       <Container>
-        <Row className="d-flex justify-content-center align-items-center">
-          {data.map((item) => (
+        <Row>
+          <Col></Col>
+          <Col>
             <Card className="carcard" style={{ width: "333px" }}>
               <Card.Img
                 fluid
                 className="card-img"
                 variant="top"
-                src={item.image}
+                src={data?.image}
                 style={{ width: "auto", height: "250px" }}
               />
               <Card.Body>
                 <Card.Title>
-                  <h5>{item.name}</h5>
+                  <h5>{data?.name}</h5>
                 </Card.Title>
                 <Card.Text>
-                  <h6>Rp {item.price} / hari</h6>
+                  <h6>Rp {data?.price} / hari</h6>
                 </Card.Text>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
                 </p>
               </Card.Body>
-              <Button
-                variant="success"
-                className="card-button"
-                onClick={() => goSearch(item.id)}
-              >
-                Detail
-              </Button>
             </Card>
-          ))}
+          </Col>
         </Row>
       </Container>
     </>
   );
-};
-
-export default CarCard;
+}

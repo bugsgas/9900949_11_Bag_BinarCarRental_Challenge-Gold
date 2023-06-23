@@ -1,13 +1,13 @@
 import React from "react";
 import { Image, Row, Col, Container } from "react-bootstrap";
-import CarCard from "./CarCard";
+import CardDetail from "./CardDetail";
 
 const Details = ({ include, exclude, info }) => {
   return (
     <div className="">
       <Container className="">
         <Row>
-          <Col md={7} className="details-col">
+          <Col className="details-col">
             <div className="detail-div">
               <div>
                 <h6>Include</h6>
@@ -36,10 +36,6 @@ const Details = ({ include, exclude, info }) => {
                 </ul>
               </div>
             </div>
-          </Col>
-
-          <Col md={5}>
-            <CarCard />
           </Col>
         </Row>
       </Container>
