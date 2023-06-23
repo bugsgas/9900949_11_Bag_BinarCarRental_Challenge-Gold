@@ -1,20 +1,27 @@
 import React from "react";
-import { Row, Col, Container } from "react-bootstrap";
-import Button from "react-bootstrap/Button";
-import Image from "react-bootstrap/Image";
+import { Button, Image, Row, Col, Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
-const Showcase = ({ description }) => {
+const Showcase = ({ showButton, showText, showImg, description }) => {
   return (
     <div className="showcase-css">
       <Container className="justify-content-evenly">
         <Row>
           <Col sm>
-            <h1>{description.title}</h1>
-            <p>{description.subtitle}</p>
-            <Button variant="success">Mulai Sewa Mobil</Button>{" "}
+            {showText && (
+              <div>
+                <h1>{description.title}</h1>
+                <p>{description.subtitle}</p>
+              </div>
+            )}
+            <Link to={"/Cars"}>
+              {showButton && (
+                <Button variant="success">Mulai Sewa Mobil</Button>
+              )}
+            </Link>
           </Col>
           <Col sm fluid>
-            <Image src="src/assets/img_car.png" fluid />
+            {showImg && <Image src="src/assets/img_car.png" fluid />}
           </Col>
         </Row>
       </Container>

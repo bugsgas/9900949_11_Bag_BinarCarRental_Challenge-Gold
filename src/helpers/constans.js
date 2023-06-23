@@ -63,10 +63,23 @@ export const benefitList = [
 ];
 
 // testimonial
-export const testi = {
-  title: "Testimonial?",
-  subtitle: "Berbagai review positif dari para pelanggan kami",
-};
+export const testimonial = [
+  {
+    text: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod"',
+    person: "John Doe, Jakarta",
+    pic: "/src/assets/img_photo.png",
+  },
+  {
+    text: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod"',
+    person: "Ryan Gosling 23, Malang",
+    pic: "/src/assets/img_photo.png",
+  },
+  {
+    text: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod"',
+    person: "Bruce Lee 29, Yogyakarta",
+    pic: "/src/assets/img_photo.png",
+  },
+];
 
 // banner
 export const bannercta = {
@@ -106,10 +119,29 @@ export const contact = {
   phone: "081-233-334-808",
 };
 
-export const sosList = [
-  "src/assets/icon_facebook.png",
-  "src/assets/icon_instagram.png",
-  "src/assets/icon_mail.png",
-  "src/assets/icon_twitter.png",
-  "src/assets/icon_twitch.png",
+//details
+
+export const include = [
+  "Apa saja yang termasuk dalam paket misal durasi max 12 jam",
+  "Sudah termasuk bensin selama 12 jam",
+  "Sudah termasuk Tiket Wisata",
+  "Sudah termasuk pajak",
+];
+
+export const exclude = [
+  "Tidak termasuk biaya makan sopir Rp 75.000/hari",
+  "Jika overtime lebih dari 12 jam akan ada tambahan biaya Rp 20.000/jam",
+  "Tidak termasuk akomodasi penginapan",
+];
+
+export const note = [
+  "Tidak termasuk biaya makan sopir Rp 75.000/hari",
+  "Jika overtime lebih dari 12 jam akan ada tambahan biaya Rp 20.000/jam",
+  "Tidak termasuk akomodasi penginapan",
+  "Tidak termasuk biaya makan sopir Rp 75.000/hari",
+  "Jika overtime lebih dari 12 jam akan ada tambahan biaya Rp 20.000/jam",
+  "Tidak termasuk akomodasi penginapan",
+  "Tidak termasuk biaya makan sopir Rp 75.000/hari",
+  "Jika overtime lebih dari 12 jam akan ada tambahan biaya Rp 20.000/jam",
+  "Tidak termasuk akomodasi penginapan",
 ];

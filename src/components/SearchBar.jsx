@@ -1,72 +1,67 @@
 import React from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 
-const SearchBar = ({ description }) => {
+const SearchBar = ({ description, search, clicked }) => {
   return (
-    <div>
+    <>
       <Container className="search-menu">
-        <div className="floating-menu">
-          <Row>
-            {/* 1 */}
-            <Col>
-              <h6>Nama Mobil</h6>
-              <Form className="d-flex">
-                <Form.Control
-                  type="search"
-                  placeholder="Ketik nama/tipe mobil"
-                  className="me-2"
-                  aria-label="Search"
-                />
-              </Form>
-            </Col>
+        <Row>
+          {/* 1 */}
+          <Col md={2}>
+            <h6>Nama Mobil</h6>
+            <Form className="d-flex">
+              <Form.Control
+                type="search"
+                placeholder="Nama/Tipe mobil"
+                className="me-2"
+                aria-label="Search"
+                onChange={search}
+              />
+            </Form>
+          </Col>
+          {/* 2 */}
+          <Col md={2}>
+            <h6>Kategori</h6>
+            <Form.Select name="category">
+              <option value="" selected disabled hidden>
+                Kapasitas Mobil
+              </option>
+              <option value="small">2 - 4 orang</option>
+              <option value="medium">4 - 6 orang</option>
+              <option value="large">6 - 8 orang</option>
+            </Form.Select>
+          </Col>
+          {/* 3 */}
+          <Col md={2}>
+            <h6>Harga Minimum</h6>
+            <Form className="d-flex">{/* belum */}</Form>
+          </Col>
+          {/* 4 */}
+          <Col md={2}>
+            <h6>Harga Maksimal</h6>
+            <Form className="d-flex">{/* belum */}</Form>
+          </Col>
+          {/* 5 */}
+          <Col md={2}>
+            <h6>Status</h6>
+            <Form.Select name="status" defaultValue="status">
+              <option value="" selected disabled hidden>
+                Status Sewa
+              </option>
+              <option value="true">Sudah Disewa</option>
+              <option value="false">Belum Disewa</option>
+            </Form.Select>
+          </Col>
 
-            {/* 2 */}
-            <Col>
-              <h6>Kategori</h6>
-              <Form className="d-flex">
-                <Form.Control
-                  type="search"
-                  placeholder="Masukan Kapasitas Mobil"
-                  className="me-2"
-                  aria-label="Search"
-                />
-              </Form>
-            </Col>
-
-            {/* 3 */}
-            <Col>
-              <h6>Harga</h6>
-              <Form className="d-flex">
-                <Form.Control
-                  type="search"
-                  placeholder="Masukan Harga Sewa per Hari"
-                  className="me-2"
-                  aria-label="Search"
-                />
-              </Form>
-            </Col>
-
-            {/* 4 */}
-            <Col>
-              <h6>Status</h6>
-              <Form className="d-flex">
-                <Form.Control
-                  type="search"
-                  placeholder="Disewa"
-                  className="me-2"
-                  aria-label="Search"
-                />
-              </Form>
-            </Col>
-
-            {/* 5 */}
-            <Col>
-              <Button variant="success">Mulai Sewa Mobil</Button>{" "}
-            </Col>
-          </Row>
-        </div>
+          {/* 6 */}
+          <Col md={2}>
+            <Button variant="success" onClick={clicked}>
+              Mulai Sewa Mobil
+            </Button>
+          </Col>
+        </Row>
       </Container>
-    </div>
+    </>
   );
 };
 
