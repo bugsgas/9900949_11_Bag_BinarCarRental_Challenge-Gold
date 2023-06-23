@@ -12,7 +12,6 @@ import CardDetail from "../components/CardDetail";
 import { menuList } from "../helpers/constans";
 import { textOne } from "../helpers/constans";
 import { contact } from "../helpers/constans";
-import { include, exclude, note } from "../helpers/constans";
 
 export default function DetailCars() {
   return (
@@ -24,7 +23,7 @@ export default function DetailCars() {
         showText={false}
         showImg={false}
       />
-      <CardDetail include={include} exclude={exclude} info={note} />
+      <CardDetail />
       <Footer contactUs={contact} menu={menuList} />
     </>
   );

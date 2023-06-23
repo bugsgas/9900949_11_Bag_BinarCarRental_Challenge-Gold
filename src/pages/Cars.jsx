@@ -6,9 +6,7 @@ import axios from "axios";
 import NavbarMain from "../components/NavbarMain";
 import Showcase from "../components/Showcase";
 import Footer from "../components/Footer";
-import SearchBar from "../components/SearchBar";
-import Details from "../components/Details";
-import CarCard from "../components/CarCard";
+import FindCarComponent from "../FindCarComponent";
 
 //helper
 import { menuList } from "../helpers/constans";
@@ -31,18 +29,13 @@ export default function Cars() {
   }, []);
 
   const getData = () => {
-    const api = `https://bootcamp-rent-cars.herokuapp.com/customer/v2/car?name=${name}&category=${category}`;
-
+    const api = `https://bootcamp-rent-cars.herokuapp.com/customer/v2/car?name=${name}`;
     axios
       .get(api)
       .then((res) => {
         setData(res.data.cars);
       })
       .catch((err) => console.log(err));
-  };
-
-  const handleChange = (e) => {
-    setName(e.target.value);
   };
 
   return (
@@ -54,20 +47,7 @@ export default function Cars() {
         showText={true}
         showImg={true}
       />
-      <SearchBar search={handleChange} clicked={getData} />
-      <CarCard />
-
-      {/* <input onChange={handleChange} />
-      <button onClick={getData}> Cari </button>
-      {data.map((item) => (
-        <div>
-          <img src={item.image} />
-          <h1>{item.name}</h1>
-          <p>{item.price}</p>
-          <button onClick={() => goSearch(item.id)}> ketik </button>
-        </div>
-      ))} */}
-
+      <FindCarComponent />
       <Footer contactUs={contact} menu={menuList} />
     </>
   );
