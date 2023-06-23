@@ -112,15 +112,15 @@
 
 .search-menu {
   background-color: #ffffff;
-  padding: 24px;
+  padding: 12px 0px;
   border-radius: 13px;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
   position: relative;
   bottom: 10rem;
 }
 
-.floating-menu {
-  margin: 24px;
+.search-pad {
+  padding: 24px;
 }
 
 /* details */

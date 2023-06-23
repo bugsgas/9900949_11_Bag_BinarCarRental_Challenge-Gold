@@ -1,10 +1,10 @@
 import React from "react";
-import { useEffect, useState } from "react";
 import axios from "axios";
 
+import { useEffect, useState } from "react";
 import { Card, Button, Row, Col, Container } from "react-bootstrap";
-
 import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const CarCard = ({}) => {
   const [data, setData] = useState([]);
@@ -21,7 +21,7 @@ const CarCard = ({}) => {
   }, []);
 
   const getData = () => {
-    const api = `https://bootcamp-rent-cars.herokuapp.com/customer/v2/car?name=${name}&category=${category}`;
+    const api = `https://api-car-rental.binaracademy.org/customer/v2/car?name=${name}&category=${category}`;
 
     axios
       .get(api)
